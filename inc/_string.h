@@ -6,7 +6,7 @@
 extern i32 _bcmp(void const *restrict const sourceA,
                  void const *restrict const sourceB, isize size);
 extern void _bcopy(void const *restrict const source,
-                   void const *restrict const destination, isize size);
+                   void const *restrict destination, isize size);
 extern void _bzero(void const *restrict source, isize size);
 extern void _explicit_bzero(void const *restrict source, isize size);
 extern u8 *_index(u8 const *restrict const source, i32 character);
