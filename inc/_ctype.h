@@ -1,20 +1,20 @@
 #ifndef _CTYPE_H
 #define _CTYPE_H
 
-#include <stdint.h>
+#include "_stdint.h"
 
-i32 is_alpha(u8 character);
-i32 is_alpha_numeric(u8 character);
-i32 is_control_character(u8 character);
-i32 is_graphical_character(u8 character);
-i32 is_hexadecimal(u8 character);
-i32 is_lower(u8 character);
-i32 is_numeric(u8 character);
-i32 is_print(u8 character);
-i32 is_punctuation(u8 character);
-i32 is_space(u8 character);
-i32 is_upper(u8 character);
-u8 to_lower(u8 character);
-u8 to_upper(u8 character);
+extern i32 is_alpha(u32 character);
+extern i32 is_alpha_numeric(u32 character);
+extern i32 is_control_character(u32 character);
+extern i32 is_graphical_character(u32 character);
+extern i32 is_hexadecimal(u32 character);
+extern i32 is_lower(u32 character);
+extern i32 is_numeric(u32 character);
+extern i32 is_print(u32 character);
+extern i32 is_punctuation(u32 character);
+extern i32 is_space(u32 character);
+extern i32 is_upper(u32 character);
+extern u32 to_lower(u32 character);
+extern u32 to_upper(u32 character);
 
 #endif

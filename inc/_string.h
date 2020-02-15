@@ -1,6 +1,9 @@
 #ifndef _STRING_H
 #define _STRING_H
 
+#include "_stdint.h"
+#include <stdlib.h>
+
 extern i32 _bcmp(void const *restrict const sourceA,
                  void const *restrict const sourceB, usize size);
 extern void _bcopy(void const *restrict const source,
