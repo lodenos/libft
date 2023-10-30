@@ -26,13 +26,13 @@
 
 #### stdlib like
 
-- [ ] ft_atoi
+- [x] ft_atoi
 
 - [ ] ft_calloc
 
 #### string like
 
-- [ ] ft_bzero
+- [x] ft_bzero
 
 - [ ] ft_memcpy
 
