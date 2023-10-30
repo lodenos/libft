@@ -1,99 +1,111 @@
-# <center>42 London 2023 - Project Libft</center>
+# Project Libft
+
+## Subject
+
+...
 
 ## Tasks
 
 ### Part I - Libc functions
 
-  #### ctype like
+#### ctype like
 
-  - [ ] ft_isalpha
+- [ ] ft_isalnum
 
-  - [ ] ft_isdigit
+- [ ] ft_isalpha
 
-  - [ ] ft_isalnum
+- [ ] ft_isascii
 
-  - [ ] ft_isascii
+- [ ] ft_isdigit
 
-  - [ ] ft_isprint
-
-#### string like
-
-- [ ] ft_strlen
-
-- [ ] ft_memset
-
-- [ ] ft_bzero
-
-- [ ] ft_memcpy
-
-- [ ] ft_memmove
-
-- [ ] ft_strlcpy
-
-- [ ] ft_strlcat
-
-- [ ] ft_toupper
+- [ ] ft_isprint
 
 - [ ] ft_tolower
 
-- [ ] ft_strchr
+- [ ] ft_toupper
 
-- [ ] ft_strrchr
-
-- [ ] ft_strncmp
-
-- [ ] ft_memchr
-
-- [ ] ft_memcmp
-
-- [ ] ft_strnstr
+#### stdlib like
 
 - [ ] ft_atoi
 
 - [ ] ft_calloc
 
+#### string like
+
+- [ ] ft_bzero
+
+- [ ] ft_memcpy
+
+- [ ] ft_memset
+
+- [ ] ft_memmove
+
+- [ ] ft_memchr
+
+- [ ] ft_memcmp
+
+- [ ] ft_strchr
+
 - [ ] ft_strdup
+
+- [ ] ft_strlcat
+
+- [ ] ft_strlcpy
+
+- [ ] ft_strlen
+
+- [ ] ft_strncmp
+
+- [ ] ft_strnstr
+
+- [ ] ft_strrchr
 
 ### Part II - Additional functions
 
-- [ ] ft_substr
-
-- [ ] ft_strjoin
-
-- [ ] ft_strtrim
-
-- [ ] ft_split
-
-- [ ] ft_itoa
-
-- [ ] ft_strmapi
-
-- [ ] ft_striteri
+#### custum
 
 - [ ] ft_putchar_fd
-
-- [ ] ft_putstr_fd
 
 - [ ] ft_putendl_fd
 
 - [ ] ft_putnbr_fd
 
+- [ ] ft_putstr_fd
+
+- [ ] ft_split
+
+- [ ] ft_striteri
+
+- [ ] ft_strjoin
+
+- [ ] ft_strmapi
+
+- [ ] ft_strtrim
+
+- [ ] ft_substr
+
+#### string like
+
+- [ ] ft_itoa
+
 ### Bonus
 
-- [ ] ft_lstnew
-
-- [ ] ft_lstadd_front
-
-- [ ] ft_lstsize
-
-- [ ] ft_lstlast
+#### custom list
 
 - [ ] ft_lstadd_back
 
-- [ ] ft_lstdelone
+- [ ] ft_lstadd_front
 
 - [ ] ft_lstclear
 
+- [ ] ft_lstdelone
+
 - [ ] ft_lstiter
 
+- [ ] ft_lstlast
+
 - [ ] ft_lstmap
+
+- [ ] ft_lstnew
+
+- [ ] ft_lstsize
