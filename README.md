@@ -64,7 +64,7 @@
 
 #### custum
 
-- [ ] ft_putchar_fd
+- [x] ft_putchar_fd
 
 - [ ] ft_putendl_fd
 
