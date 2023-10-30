@@ -52,7 +52,7 @@
 
 - [ ] ft_strlcpy
 
-- [ ] ft_strlen
+- [x] ft_strlen
 
 - [ ] ft_strncmp
 
