@@ -10,19 +10,19 @@
 
 #### ctype like
 
-- [ ] ft_isalnum
+- [x] ft_isalnum
 
-- [ ] ft_isalpha
+- [x] ft_isalpha
 
-- [ ] ft_isascii
+- [x] ft_isascii
 
-- [ ] ft_isdigit
+- [x] ft_isdigit
 
-- [ ] ft_isprint
+- [x] ft_isprint
 
-- [ ] ft_tolower
+- [x] ft_tolower
 
-- [ ] ft_toupper
+- [x] ft_toupper
 
 #### stdlib like
 

@@ -1,3 +1,5 @@
+#include "libft.h"
+
 size_t ft_strlen(char const *str) {
   register unsigned long long x;
   char const *const head = str;
