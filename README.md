@@ -28,13 +28,13 @@
 
 - [x] ft_atoi
 
-- [ ] ft_calloc
+- [x] ft_calloc
 
 #### string like
 
 - [x] ft_bzero
 
-- [ ] ft_memcpy
+- [x] ft_memcpy
 
 - [ ] ft_memset
 
