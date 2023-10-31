@@ -46,7 +46,7 @@
 
 - [ ] ft_strchr
 
-- [ ] ft_strdup
+- [x] ft_strdup
 
 - [ ] ft_strlcat
 
