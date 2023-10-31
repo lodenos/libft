@@ -10,7 +10,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 INCLUDES = $(wildcard $(INC_DIR)/*.h)
-SOURCES = $(wildcard $(SRC_DIR)/**/*.c)
+SOURCES = $(wildcard $(SRC_DIR)/**/*.c) $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
 
 all: $(NAME)

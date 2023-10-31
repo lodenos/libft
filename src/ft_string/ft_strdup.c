@@ -3,7 +3,7 @@
 
 char *ft_strdup(char const *str) {
   const size_t size = ft_strlen(str);
-  char *const memory = (char *)malloc(size + 1);
+  char *const memory = (char *const)malloc(size + 1);
 
   if (!memory)
     return NULL;

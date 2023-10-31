@@ -1,4 +1,5 @@
-#include "libft.h"
+#include <stdlib.h>
+#include "ft_string.h"
 
 void *ft_calloc(size_t nmemb, size_t size) {
   register const size_t total = nmemb * size;
