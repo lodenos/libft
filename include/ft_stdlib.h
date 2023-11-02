@@ -5,5 +5,6 @@
 
 int ft_atoi(char const *str);
 void *ft_calloc(size_t nmemb, size_t size);
+char *ft_itoa(int nbr);
 
 #endif
