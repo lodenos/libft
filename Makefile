@@ -3,7 +3,7 @@
 NAME = libft.a
 
 COMPILER = cc
-CFLAGS = -Wall -Wextra -Werror -Wpedantic -std=c99
+CFLAGS = -Wall -Wextra -Werror -ansi -pedantic -std=c99
 
 INC_DIR = include
 SRC_DIR = src
