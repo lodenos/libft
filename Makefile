@@ -19,7 +19,7 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)
-	mkdir -p $(@D)
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
