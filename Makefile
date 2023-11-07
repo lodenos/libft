@@ -3,13 +3,9 @@
 NAME = libft.a
 
 COMPILER = cc
-CFLAGS = -Wall -Wextra -Werror -ansi -pedantic -std=c99
+CFLAGS = -Wall -Wextra -Werror -std=c99
 
-INC_DIR = include
-SRC_DIR = src
-OBJ_DIR = obj
-
-INCLUDES = $(wildcard $(INC_DIR)/*.h)
+INCLUDE = $(wildcard $(INC_DIR)/*.h)
 SOURCES = $(wildcard $(SRC_DIR)/**/*.c) $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
 
@@ -18,15 +14,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)
+%.o: %.c $(INCLUDE)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
-	rm -rf ${OBJ_DIR}
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re: fclean
 	make
