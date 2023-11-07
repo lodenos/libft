@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "ft_string.h"
+#include "libft.h"
 
 char *ft_strjoin(char const *prefix, char const *suffix) {
   char *memory;

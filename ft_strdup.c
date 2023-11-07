@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "ft_string.h"
+#include "libft.h"
 
 char *ft_strdup(char const *str) {
   const size_t size = ft_strlen(str);

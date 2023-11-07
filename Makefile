@@ -19,24 +19,23 @@ SOURCES_BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
   ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c \
   ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
-OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
+OBJS = $(patsubst %.c, %.o, $(SOURCES))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 
 %.o: %.c $(INCLUDE)
-	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean
-	make
+	@make
 
 .PHONY: all clean fclean re
