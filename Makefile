@@ -20,6 +20,7 @@ SOURCES_BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
   ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
 OBJS = $(patsubst %.c, %.o, $(SOURCES))
+OBJS_BONUS = $(patsubst %.c, %.o, $(SOURCES_BONUS))
 
 all: $(NAME)
 
@@ -28,6 +29,9 @@ $(NAME): $(OBJS)
 
 %.o: %.c $(INCLUDE)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
 	@rm -f $(OBJS)

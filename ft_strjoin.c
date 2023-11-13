@@ -1,6 +1,19 @@
 #include <stdlib.h>
 #include "libft.h"
 
+static char *ft_strcpy(char *dst, char const *src) {
+  char *const head = dst;
+
+  while (*src)
+    *dst++ = *src++;
+  return head;
+}
+
+static char *ft_strcat(char *dst, char const *src) {
+  ft_strcpy(dst + ft_strlen(dst), src);
+  return dst;
+}
+
 char *ft_strjoin(char const *prefix, char const *suffix) {
   char *memory;
 

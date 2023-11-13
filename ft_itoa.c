@@ -45,7 +45,7 @@ char *ft_itoa(int nbr) {
       buffer[1] = 0x30 + -(nbr % 10);
       return buffer;
     }
-    nbr_recursive(buffer + nbr_figure, nbr);
+    nbr_recursive(buffer + nbr_figure - 1, nbr);
     return buffer;
   }
   nbr_recursive(buffer + nbr_figure, nbr);
