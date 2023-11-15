@@ -6,6 +6,7 @@ static char *ft_strcpy(char *dst, char const *src) {
 
   while (*src)
     *dst++ = *src++;
+  *dst = *src;
   return head;
 }
 

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char *ft_strncpy(char *dst, char const *src, size_t len) {
+static char *ft_strncpy(char *dst, char const *src, size_t len) {
   char *const head = dst;
 
   while (*src && len--)
