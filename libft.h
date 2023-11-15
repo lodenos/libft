@@ -8,7 +8,7 @@ typedef struct s_list {
   struct s_list *next;
 } t_list;
 
-void *ft_bzero(void *ptr, size_t n);
+void ft_bzero(void *ptr, size_t n);
 char *ft_itoa(int nbr);
 void *ft_memchr(void const *ptr, int c, size_t n);
 int ft_memcmp(void const *s1, void const *s2, size_t n);
