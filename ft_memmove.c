@@ -11,6 +11,5 @@
   } else
     while (len--)
       *(unsigned char *)dst++ = *(unsigned char *)src++;
-
-  return (head);
+  return head;
 }
