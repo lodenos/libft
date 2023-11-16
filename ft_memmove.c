@@ -3,6 +3,8 @@
  void *ft_memmove(void *dst, void const *src, size_t len) {
   void *const head = dst;
 
+  if (!dst && !src)
+    return head;
   if (src < dst) {
     dst = dst + len - 1;
     src = src + len - 1;

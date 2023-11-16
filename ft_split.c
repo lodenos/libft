@@ -1,74 +1,68 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static char *ft_strncat(char *dest, char *src, size_t n) {
- char *const	head = dest;
 
-  while (*dest)
-    ++dest;
-  while (*src && n--)
-    *dest++ = *src++;
-  *dest = 0;
-  return (head);
+static char **free_segment_array(char **segment_array) {
+  char **head = segment_array;
+
+  if (!segment_array)
+    return NULL;
+  while (segment_array)
+    free(segment_array++);
+  free(head);
+  return NULL;
 }
 
-static char **segment_array(char *str, char c) {
+static size_t get_nbr_segment(char const *str, char c) {
   char *prev;
-  char **memory;
   size_t nbr_segment;
 
-  nbr_segment = 1;
+  nbr_segment = 0;
   while (*str) {
-    prev = str;
+    prev = (char *)str;
     str = ft_strchr(str, c);
     if (!str)
-      break ;
-    if (str - prev >= 1)
+      return ++nbr_segment;
+    if (str++ - prev)
       ++nbr_segment;
-    ++str;
   }
-
-  memory = (char **)malloc(sizeof(char *) * nbr_segment);
-  return memory;
-}
-
-static char *segment_dup(char *previous, int length) {
-  char *memory;
-
-  if (length == 0)
-    while (previous[length])
-      ++length;
-  memory = (char *)malloc(length + 1);
-  if (!memory)
-    return NULL;
-  *memory = 0;
-  return ft_strncat(memory, previous, length);
+  return nbr_segment;
 }
 
 char **ft_split(char const *str, char c) {
-  char *prev;
-  char **memory;
+  size_t nbr_segment;
+  char **head;
   char **split;
+  char *prev;
 
-
-  if (!str || !*str)
+  if (!str)
     return NULL;
-  memory = segment_array((char *)str, c);
-  if (!memory)
+  nbr_segment = get_nbr_segment(str, c);
+  if (!nbr_segment)
+    return (char **)ft_calloc(1, sizeof(char *));
+  split = (char **)ft_calloc(nbr_segment + 1, sizeof(char *));
+  if (!split)
     return NULL;
-  split = memory;
-
-
+  head = split;
   while (*str) {
     prev = (char *)str;
-    str = (char const *)ft_strchr(str, c);
+    str = ft_strchr(str, c);
+
     if (!str) {
-      *split = segment_dup(prev, 0);
+      *split = ft_substr(prev, 0, ft_strlen(prev));
+      if (!*split++)
+        return free_segment_array(head);
       break ;
     }
-    if (str - prev)
-      *split++ = segment_dup(prev, str - prev);
+ 
+
+    if (str - prev) {
+      *split = ft_substr(prev, 0, str - prev);
+      if (!*split++)
+        return free_segment_array(head);
+    }
+
     ++str;
   }
-  return memory;
+  return head;
 }

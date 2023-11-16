@@ -18,6 +18,8 @@ static char *ft_strcat(char *dst, char const *src) {
 char *ft_strjoin(char const *prefix, char const *suffix) {
   char *memory;
 
+  if (!prefix || !suffix)
+    return NULL;
   memory = (char *)malloc(ft_strlen(prefix) + ft_strlen(suffix) + 1);
   if (!memory)
     return NULL;

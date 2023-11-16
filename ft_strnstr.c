@@ -3,7 +3,9 @@
 char *ft_strnstr(char const *haystack, char const *needle, size_t len) {
   size_t index;
 
-  if (!*needle)
+  if (!haystack && !len)
+    return NULL;
+  if (!*needle || haystack == needle)
     return (char *)haystack;
   while (*haystack && len--) {
     index = 0;

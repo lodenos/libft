@@ -9,6 +9,8 @@ char *ft_strtrim(char const *str, char const *set) {
 
   if (!str || !set)
     return NULL;
+  if (!*str)
+    return (char *)ft_calloc(1, 1);
   head = 0;
   tail = ft_strlen(str) - 1;
   while (ft_strchr(set, str[head]) && head <= tail)

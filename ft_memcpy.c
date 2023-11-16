@@ -1,12 +1,12 @@
 #include <string.h>
 
 void *ft_memcpy(void *dst, void const *src, size_t n) {
-  unsigned char *destination;
-  unsigned char *source;
+  void *const head = dst;
 
-  destination = (unsigned char *)dst;
-  source = (unsigned char *)src;
+  if (!dst && !src)
+    return head;
+
   while (n--)
-    *destination++ = *source++;
-  return dst;
+    *(unsigned char *)dst++ = *(unsigned char *)src++;
+  return head;
 }

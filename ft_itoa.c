@@ -33,9 +33,9 @@ char *ft_itoa(int nbr) {
   char *buffer;
 
   buffer = (char *)malloc(nbr_figure + 1);
-  buffer[nbr_figure] = 0;
   if (!buffer)
     return NULL;
+  buffer[nbr_figure] = 0;
   if (nbr < 0) {
     *buffer = 0x2D;
     if (nbr > -10) {
