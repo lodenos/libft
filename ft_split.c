@@ -54,7 +54,6 @@ char **ft_split(char const *str, char c) {
         return free_segment_array(head);
       break ;
     }
- 
 
     if (str - prev) {
       *split = ft_substr(prev, 0, str - prev);
