@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include "libft.h"
 
-
 static char **free_segment_array(char **segment_array) {
   char **head = segment_array;
 
@@ -37,7 +36,16 @@ char **ft_split(char const *str, char c) {
 
   if (!str)
     return NULL;
+  if (!c) {
+    if (!*str)
+      return (char **)ft_calloc(1, sizeof(char *));
+    split = (char **)ft_calloc(2, sizeof(char *));
+    *split = ft_strdup(str);
+    return split;
+  }
+
   nbr_segment = get_nbr_segment(str, c);
+
   if (!nbr_segment)
     return (char **)ft_calloc(1, sizeof(char *));
   split = (char **)ft_calloc(nbr_segment + 1, sizeof(char *));
@@ -49,9 +57,11 @@ char **ft_split(char const *str, char c) {
     str = ft_strchr(str, c);
 
     if (!str) {
-      *split = ft_substr(prev, 0, ft_strlen(prev));
-      if (!*split++)
-        return free_segment_array(head);
+      if (ft_strlen(prev)) {
+        *split = ft_substr(prev, 0, ft_strlen(prev));
+        if (!*split++)
+          return free_segment_array(head);
+      }
       break ;
     }
 
