@@ -1,44 +1,91 @@
-# https://makefiletutorial.com
-
 NAME = libft.a
 
-COMPILER = cc
-CFLAGS = -Wall -Wextra -Werror -std=c99
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-INCLUDE = libft.h
+INCLUDES = -I ./inc
 
-SOURCES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
-  ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c \
-  ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c \
-  ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c \
-  ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
-  ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
-  ft_substr.c ft_tolower.c ft_toupper.c
+SOURCE_DIR = src
+SOURCE_FILES = \
+  ft_ctype/ft_isalnum.c \
+  ft_ctype/ft_isalpha.c \
+  ft_ctype/ft_isascii.c \
+  ft_ctype/ft_iscntrl.c \
+  ft_ctype/ft_isdigit.c \
+  ft_ctype/ft_islower.c \
+  ft_ctype/ft_isprint.c \
+  ft_ctype/ft_ispunct.c \
+  ft_ctype/ft_isspace.c \
+  ft_ctype/ft_isupper.c \
+  ft_ctype/ft_isxdigit.c \
+  ft_ctype/ft_tolower.c \
+  ft_ctype/ft_toupper.c \
+  \
+  ft_stdlib/ft_atof.c \
+  ft_stdlib/ft_atoi.c \
+  ft_stdlib/ft_atol.c \
+  ft_stdlib/ft_atoll.c \
+  ft_stdlib/ft_calloc.c \
+  ft_stdlib/ft_itoa.c \
+  \
+  ft_string/ft_memchr.c \
+  ft_string/ft_memcmp.c \
+  ft_string/ft_memcpy.c \
+  ft_string/ft_memmove.c \
+  ft_string/ft_memset.c \
+  ft_string/ft_strcat.c \
+  ft_string/ft_strchr.c \
+  ft_string/ft_strcmp.c \
+  ft_string/ft_strcpy.c \
+  ft_string/ft_strdup.c \
+  ft_string/ft_strlen.c \
+  ft_string/ft_strlwr.c \
+  ft_string/ft_strncat.c \
+  ft_string/ft_strncmp.c \
+  ft_string/ft_strncpy.c \
+  ft_string/ft_strndup.c \
+  ft_string/ft_strrchr.c \
+  ft_string/ft_strrev.c \
+  ft_string/ft_strstr.c \
+  ft_string/ft_strtok.c \
+  \
+  list/list_clear.c \
+  list/list_clone.c \
+  list/list_compact.c \
+  list/list_concat.c \
+  list/list_delete_at.c \
+  list/list_dup.c \
+  list/list_each.c \
+  list/list_index.c \
+  list/list_insert.c \
+  list/list_new.c \
+  list/list_new_node.c \
+  list/list_pop.c \
+  list/list_pretty_print.c \
+  list/list_push.c \
+  list/list_size.c \
+  \
+  memory/memory_pretty_print.c
 
-SOURCES_BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-  ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+OBJ_DIR = obj
+OBJS = $(patsubst %.c, %.o, $(addprefix $(SOURCE_DIR)/, $(SOURCE_FILES)))
 
-OBJS = $(patsubst %.c, %.o, $(SOURCES))
-OBJS_BONUS = $(patsubst %.c, %.o, $(SOURCES_BONUS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
-%.o: %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS) $(OBJS_BONUS)
+	rm -rf $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean
-	@make
+	make
 
 .PHONY: all clean fclean re
