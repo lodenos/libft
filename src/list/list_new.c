@@ -11,6 +11,12 @@ t_list *list_new(void *data, size_t size) {
     free(list);
     return NULL;
   }
-  *list->head = (t_list_node){ .data = data, .size = size, .next = NULL };
+  if (!data)
+    size = 0;
+  *list->head = (t_list_node){
+    .data = data,
+    .size = size,
+    .next = NULL
+  };
   return list;
 }

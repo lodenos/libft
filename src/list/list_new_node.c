@@ -6,6 +6,12 @@ t_list_node *list_new_node(void *data, size_t size) {
 
   if (!node)
     return NULL;
-  *node = (t_list_node){ data, size, NULL };
+  if (!data)
+    size = 0;
+  *node = (t_list_node) {
+    .data = data,
+    .size = size,
+    .next = NULL
+  };
   return node;
 }
