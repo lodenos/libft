@@ -14,6 +14,7 @@ int ft_strcmp(char const *, char const *);
 char *ft_strcpy(char *, char const *);
 char *ft_strdup(char const *);
 size_t ft_strlen(char const *);
+char *ft_strlwr(char *);
 char *ft_strncat(char *, char const *, size_t);
 int ft_strncmp(char const *, char const *, size_t);
 char *ft_strncpy(char *, char const *, size_t);
