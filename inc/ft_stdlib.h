@@ -16,9 +16,10 @@ long ft_atol(char const *);
 long long ft_atoll(char const *);
 void *ft_calloc(size_t, size_t);
 char *ft_itoa(int, char *, int);
-char *ft_ltoa(long, char *, int);
 char *ft_lltoa(long long, char *, int);
-char *ft_ultoa(unsigned long, char *, int);
+char *ft_ltoa(long, char *, int);
 char *ft_ulltoa(unsigned long long, char *, int);
+char *ft_ultoa(unsigned long, char *, int);
+char *ft_utoa(unsigned int, char *, int);
 
 #endif

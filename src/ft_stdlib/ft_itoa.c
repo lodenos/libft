@@ -11,6 +11,8 @@ char *ft_itoa(int number, char *buffer, int base) {
   negative = false;
   if (!buffer || base < 2 || base > 36)
     return head;
+  if (!number)
+    *buffer++ = BASE[0];
   if (number < 0) {
     negative = true;
     *buffer++ = BASE[-(number % base)];

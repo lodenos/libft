@@ -27,6 +27,11 @@ SOURCE_FILES = \
   ft_stdlib/ft_atoll.c \
   ft_stdlib/ft_calloc.c \
   ft_stdlib/ft_itoa.c \
+  ft_stdlib/ft_lltoa.c \
+  ft_stdlib/ft_ltoa.c \
+  ft_stdlib/ft_ulltoa.c \
+  ft_stdlib/ft_ultoa.c \
+  ft_stdlib/ft_utoa.c \
   \
   ft_string/ft_memchr.c \
   ft_string/ft_memcmp.c \

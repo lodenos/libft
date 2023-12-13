@@ -15,6 +15,7 @@ t_list *list_clear(t_list *list, void (*fn)(t_list_node*)) {
   while (node) {
     indirect = node->next;
     fn(node);
+    free(node);
     node = indirect;
   }
   list->head = NULL;

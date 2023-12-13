@@ -8,6 +8,8 @@ char *ft_ulltoa(unsigned long long number, char *buffer, int base) {
 
   if (!buffer || base < 2 || base > 36)
     return head;
+  if (!number)
+    *buffer++ = BASE[0];
   while (number) {
     *buffer++ = BASE[number % base];
     number /= base;
