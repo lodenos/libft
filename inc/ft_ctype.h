@@ -3,6 +3,7 @@
 
 int ft_isalnum(int);
 int ft_isalpha(int);
+int ft_isascii(int);
 int ft_iscntrl(int);
 int ft_isdigit(int);
 int ft_islower(int);

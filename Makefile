@@ -1,7 +1,9 @@
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Weverything -std=gnu18 \
+  -Wno-poison-system-directories -Wno-cast-qual
+
 
 INCLUDES = -I ./inc
 

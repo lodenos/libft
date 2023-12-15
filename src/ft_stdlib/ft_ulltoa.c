@@ -11,8 +11,8 @@ char *ft_ulltoa(unsigned long long number, char *buffer, int base) {
   if (!number)
     *buffer++ = BASE[0];
   while (number) {
-    *buffer++ = BASE[number % base];
-    number /= base;
+    *buffer++ = BASE[number % (unsigned long long)base];
+    number /= (unsigned long long)base;
   }
   *buffer = 0;
   return ft_strrev(head);

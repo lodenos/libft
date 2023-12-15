@@ -1,3 +1,5 @@
+#include "ft_string.h"
+
 char *ft_strcpy(char *destination, char const *source) {
   char *const head = destination;
 

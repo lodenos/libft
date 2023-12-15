@@ -1,17 +1,18 @@
-#include <stddef.h>
+#include "ft_string.h"
 
 void *ft_memmove(void *destination, void const *source, size_t num) {
-  void *const head = destination;
+  unsigned char *dst;
+  unsigned char const *src = (unsigned char const *)source;
 
+  dst = (unsigned char *)destination;
   if (!destination && !source)
-    return head;
+    return destination;
   if (source < destination) {
-    destination = destination + num - 1;
-    source = source + num - 1;
+    dst += (num - 1);
+    src += (num - 1);
     while (num--)
-      *(unsigned char *)destination-- = *(unsigned char *)source--;
-  } else
-    while (num--)
-      *(unsigned char *)destination++ = *(unsigned char *)source++;
-  return head;
+      *dst-- = *src--;
+    return destination;
+  }
+  return ft_memcpy(destination, source, num);
 }

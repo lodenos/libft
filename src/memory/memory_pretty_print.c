@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <unistd.h>
-
 #include "ft_stdlib.h"
 #include "ft_string.h"
+#include "memory.h"
 
 void memory_pretty_print(void *memory, size_t size, size_t num_column) {
   size_t index = 0;
@@ -14,7 +14,8 @@ void memory_pretty_print(void *memory, size_t size, size_t num_column) {
     return ;
   head = buffer;
   while (index < size) {
-    *(unsigned short *)buffer = 0x3030;
+    buffer[0] = 0x30;
+    buffer[1] = 0x30;
     ft_itoa(((unsigned char *)memory)[index], buffer, HEX);
     buffer += 2;
 

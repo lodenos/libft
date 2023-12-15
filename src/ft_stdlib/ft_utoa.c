@@ -11,8 +11,8 @@ char *ft_utoa(unsigned int number, char *buffer, int base) {
   if (!number)
     *buffer++ = BASE[0];
   while (number) {
-    *buffer++ = BASE[number % base];
-    number /= base;
+    *buffer++ = BASE[number % (unsigned int)base];
+    number /= (unsigned int)base;
   }
   *buffer = 0;
   return ft_strrev(head);

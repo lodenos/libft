@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include "ft_string.h"
 
 char *ft_strncpy(char *destination, char const *source, size_t num) {
   char *const head = destination;

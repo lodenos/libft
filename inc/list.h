@@ -26,7 +26,7 @@ t_list *list_dup(t_list *);
 t_list *list_each(t_list *, void (*)(t_list_node *));
 t_list *list_index(t_list *, size_t);
 // bool list_includes(t_list *list, );
-//t_list *list_insert(t_list *list, size_t index);
+t_list *list_insert(t_list *list, size_t index);
 t_list *list_new(void *, size_t);
 t_list_node *list_new_node(void *, size_t);
 t_list *list_pop(t_list *);

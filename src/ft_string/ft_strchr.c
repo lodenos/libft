@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include "ft_string.h"
 
 char *ft_strchr(char *str, int character) {
   while (*str)

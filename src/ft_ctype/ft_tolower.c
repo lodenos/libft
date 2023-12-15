@@ -1,4 +1,7 @@
+#include "ft_ctype.h"
+
 int ft_tolower(int c) {
-  (void)c;
-  return 0;
+  if ((c > 0x40) && (c < 0x5B))
+    return c ^ 0x20;
+  return c;
 }

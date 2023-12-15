@@ -1,4 +1,5 @@
+#include "ft_ctype.h"
+
 int ft_isspace(int c) {
-  (void)c;
-  return 0;
+  return ((c > 0x08) && (c < 0x0E)) || (c == 0x20);
 }

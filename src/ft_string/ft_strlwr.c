@@ -1,3 +1,5 @@
+#include "ft_string.h"
+
 // Extention from Microsoft
 
 char *ft_strlwr(char *str) {

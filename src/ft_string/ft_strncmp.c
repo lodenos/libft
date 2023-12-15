@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include "ft_string.h"
 
 int ft_strncmp(char const *str1, char const *str2, size_t num) {
   while ((*str1 || *str2) && num--)
