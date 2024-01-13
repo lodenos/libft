@@ -44,6 +44,7 @@ SOURCE_FILES = \
   ft_string/ft_strcmp.c \
   ft_string/ft_strcpy.c \
   ft_string/ft_strdup.c \
+  ft_string/ft_string_free.c \
   ft_string/ft_strlen.c \
   ft_string/ft_strlwr.c \
   ft_string/ft_strncat.c \

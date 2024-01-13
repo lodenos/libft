@@ -20,6 +20,7 @@ char *ft_strchr(char *, int);
 int ft_strcmp(char const *, char const *);
 char *ft_strcpy(char *, char const *);
 char *ft_strdup(char const *);
+void ft_string_free(t_string **);
 size_t ft_strlen(char const *);
 char *ft_strlwr(char *);
 char *ft_strncat(char *, char const *, size_t);
