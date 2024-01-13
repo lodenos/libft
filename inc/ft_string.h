@@ -3,6 +3,13 @@
 
 #include <stddef.h>
 
+typedef struct s_string t_string;
+
+struct s_string {
+  char *data;
+  size_t size;
+};
+
 void *ft_memchr(void const *, int, size_t);
 int ft_memcmp(void const *, void const *, size_t);
 void *ft_memcpy(void *, void const *, size_t);

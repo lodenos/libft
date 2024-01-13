@@ -4,7 +4,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Weverything -std=gnu18 \
   -Wno-poison-system-directories -Wno-cast-qual
 
-
 INCLUDES = -I ./inc
 
 SOURCE_DIR = src
@@ -71,6 +70,7 @@ SOURCE_FILES = \
   list/list_pretty_print.c \
   list/list_push.c \
   list/list_size.c \
+  list/list_to_string.c \
   \
   memory/memory_pretty_print.c
 

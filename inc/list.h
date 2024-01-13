@@ -2,18 +2,21 @@
 #define LIST_H
 
 #include <stddef.h>
+#include "ft_string.h"
 
 typedef struct s_list t_list;
 typedef struct s_list_node t_list_node;
 
 struct s_list {
   t_list_node *head;
+  // tail
+  // array
 };
 
 struct s_list_node {
   void *data;
   size_t size;
-  // type
+  // type -> for polymorphism
   t_list_node *next;
 };
 
@@ -33,5 +36,7 @@ t_list *list_pop(t_list *);
 t_list *list_pretty_print(t_list *);
 t_list *list_push(t_list *, t_list_node *);
 size_t list_size(t_list *);
+
+t_string *list_to_string(t_list *);
 
 #endif
