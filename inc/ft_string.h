@@ -7,7 +7,8 @@ typedef struct s_string t_string;
 
 struct s_string {
   char *data;
-  size_t size;
+  size_t data_size;
+  size_t ptr_size;
 };
 
 void *ft_memchr(void const *, int, size_t);

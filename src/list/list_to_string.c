@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include "list.h"
 
-#include <stdio.h>
-
 static size_t __size_to_string(t_list_node *node) {
   size_t size;
 
@@ -22,20 +20,16 @@ t_string *list_to_string(t_list *list) {
  
   node = list->head;
   string = (t_string *)malloc(sizeof(t_string));
-
   if (!string)
     return NULL;
-
-  string->size = __size_to_string(node);
-
-  string->data = (char *)malloc(string->size + 1);
-
+  string->data_size = __size_to_string(node);
+  string->ptr_size = string->data_size + 1;
+  string->data = (char *)malloc(string->ptr_size);
   if (!string->data) {
     free(string);
     return NULL;
   }
-
-  string->data[string->size] = 0;
+  string->data[string->data_size] = 0;
   index = 0;
   while (node) {
     if (node->size > 1) {
