@@ -2,8 +2,6 @@
 #include "ft_stdlib.h"
 #include "ft_string.h"
 
-// Extention from z/OS UNIX IBM
-
 char *ft_itoa(int number, char *buffer, int base) {
   bool negative;
   char *const head = buffer;

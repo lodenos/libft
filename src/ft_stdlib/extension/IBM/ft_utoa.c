@@ -1,8 +1,6 @@
 #include "ft_stdlib.h"
 #include "ft_string.h"
 
-// Extention from z/OS UNIX IBM
-
 char *ft_utoa(unsigned int number, char *buffer, int base) {
   char *const head = buffer;
 

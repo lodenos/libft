@@ -1,7 +1,5 @@
 #include "ft_string.h"
 
-// Extention from Microsoft
-
 char *ft_strrev(char *str) {
   char *head;
   char *tail;

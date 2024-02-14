@@ -1,23 +1,19 @@
 #include <stdlib.h>
 #include "list.h"
 
-static void __default_free_node(t_list_node *node) {
-  free(node->data);
-}
-
-t_list *list_clear(t_list *list, void (*fn)(t_list_node*)) {
+t_list *list_clear(t_list *context) {
   t_list_node *indirect;
   t_list_node *node;
 
-  if (!fn)
-    fn = __default_free_node;
-  node = list->head;
+  node = context->front;
   while (node) {
-    indirect = node->next;
-    fn(node);
-    free(node);
-    node = indirect;
+    list_register_get_fn(node->type)(node);
+    indirect = node;
+    node = indirect->next;
+    free(indirect);
   }
-  list->head = NULL;
-  return list;
+  context->front = NULL;
+  context->back = NULL;
+  // TODO: Free the loopup
+  return context;
 }

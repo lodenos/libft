@@ -2,9 +2,7 @@
 #include "ft_stdlib.h"
 #include "ft_string.h"
 
-// Extention from z/OS UNIX IBM
-
-char *ft_ltoa(long number, char *buffer, int base) {
+char *ft_lltoa(long long number, char *buffer, int base) {
   bool negative;
   char *const head = buffer;
 
@@ -12,7 +10,7 @@ char *ft_ltoa(long number, char *buffer, int base) {
   if (!buffer || base < 2 || base > 36)
     return head;
   if (!number)
-    *buffer = BASE[0];
+    *buffer++ = BASE[0];
   if (number < 0) {
     negative = true;
     *buffer++ = BASE[-(number % base)];
