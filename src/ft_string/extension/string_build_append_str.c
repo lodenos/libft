@@ -7,21 +7,12 @@ static t_list_node *push_string_node(t_string_build *context) {
 
   if (!type)
     return NULL;
-  string = string_new_init(&(t_string_init){
-    .first_alloc = context->unroll_size,
-    .n_block = context->n_block
-  });
-  if (!string)
+  if (!string_new_init(&string, &(t_string_init){
+        .first_alloc = context->unroll_size, .n_block = context->n_block}))
     return NULL;
-  node = list_node_new_init(&(t_list_node_init){
-    .ptr = string,
-    .ptr_size = sizeof(t_string *),
-    .type = type
-  });
-  if (!node) {
-    string_delete(&string);
-    return NULL;
-  }
+  if (!list_node_new_init(&node, &(t_list_node_init){
+        .ptr = string, .size = 1, .type = type}))
+    return string_delete(&string), NULL;
   list_push_back(&context->list, node);
   return node;
 }

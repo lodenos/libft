@@ -1,7 +1,7 @@
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 -Weverything -std=gnu18 \
+CFLAGS = -Wall -Wextra -Werror -Weverything -std=gnu18 \
   -Wno-poison-system-directories -Wno-cast-qual
 
 INCLUDES = -I ./inc
@@ -88,6 +88,7 @@ SOURCE_FILES = \
   list/list_push_back.c \
   list/list_push_front.c \
   list/list_register.c \
+  list/list_register_clear.c \
   list/list_register_get_fn.c \
   list/list_register_get_type.c \
   list/list_reverse.c \

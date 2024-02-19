@@ -28,7 +28,7 @@ struct s_list {
 
 struct s_list_node {
   void *ptr;
-  size_t ptr_size;
+  size_t size;
   size_t type;
   t_list *origin;
   t_list_node *next;
@@ -37,7 +37,7 @@ struct s_list_node {
 
 struct s_list_node_init {
   void *ptr;
-  size_t ptr_size;
+  size_t size;
   size_t type;
 };
 
@@ -51,10 +51,10 @@ t_list      *list_clear(t_list *);
 void         list_delete(t_list **);
 t_list      *list_dup(t_list *); // Shallow Copy
 t_list_node *list_index(t_list *, size_t);
-t_list      *list_insert(t_list *list, t_list_node *, size_t);
-t_list      *list_new(void);
-t_list_node *list_node_new(void);
-t_list_node *list_node_new_init(t_list_node_init *);
+t_list      *list_insert(t_list *, t_list_node *, size_t);
+t_list      *list_new(t_list **);
+t_list_node *list_node_new(t_list_node **);
+t_list_node *list_node_new_init(t_list_node **, t_list_node_init *);
 t_list_node *list_pop_at(t_list *, size_t);
 t_list_node *list_pop_back(t_list *);
 t_list_node *list_pop_front(t_list *);
@@ -65,7 +65,9 @@ t_list      *list_reverse(t_list *);
 t_list      *list_size(t_list *);
 
 // INFO: Singleton for register automatically the free fn for each type
+
 t_list_register *list_register(void);
+void             list_register_clear(void);
 t_list_fn       *list_register_get_fn(size_t);
 size_t           list_register_get_type(t_list_fn *);
 

@@ -1,18 +1,10 @@
 #include <stdlib.h>
 #include "list.h"
 
-t_list *list_new(void) {
-  t_list *const list = (t_list *)malloc(sizeof(t_list));
-
-  if (!list)
+t_list *list_new(t_list **context) {
+  *context = (t_list *)malloc(sizeof(t_list));
+  if (!context)
     return NULL;
-  *list = (t_list) {
-    .back = NULL,
-    .front = NULL,
-    .lookup = NULL,
-    .lookup_size = 0,
-    .size = 0,
-    .update = false
-  };
-  return list;
+  **context = (t_list){0};
+  return *context;
 }

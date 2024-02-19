@@ -90,17 +90,17 @@ t_string *string_append(t_string *, t_string *);
 t_string *string_append_str(t_string *, char *, size_t);
 t_string *string_clear(t_string *);
 void      string_delete(t_string **);
-t_string *string_new(void);
-t_string *string_new_init(t_string_init *);
+t_string *string_new(t_string **);
+t_string *string_new_init(t_string **, t_string_init *);
 
 // -> Builder : Based on Unrolled Linked List principle
 
 t_string_build  *string_build_append(t_string_build *, t_string *);
 t_string_build  *string_build_append_str(t_string_build *, char *, size_t);
 void             string_build_delete(t_string_build **);
-t_string_build  *string_build_new(void);
-t_string_build  *string_build_new_init(t_string_build_init *);
-t_string        *string_build_yield(t_string_build *);
+t_string_build  *string_build_new(t_string_build **);
+t_string_build  *string_build_new_init(t_string_build **, t_string_build_init *);
+t_string        *string_build_yield(t_string_build *, t_string **);
 
 //******************************************************************************
 // Microsoft
