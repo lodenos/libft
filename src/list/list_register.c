@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include "list.h"
 
+// Types: u8,u16,u32,u64 | i8,i16,i32,i64 | f32,f64
+
 static void no_effect(t_list_node *node) {
   (void)node;
 }

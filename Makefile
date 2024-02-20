@@ -74,6 +74,7 @@ SOURCE_FILES = \
   ft_string/extension/Microsoft/ft_strrev.c \
   \
   list/list_clear.c \
+  list/list_clone.c \
   list/list_delete.c \
   list/list_dup.c \
   list/list_index.c \
@@ -81,10 +82,11 @@ SOURCE_FILES = \
   list/list_new.c \
   list/list_node_new.c \
   list/list_node_new_init.c \
+  list/list_node_print.c \
   list/list_pop_at.c \
   list/list_pop_back.c \
   list/list_pop_front.c \
-  list/list_pretty_print.c \
+  list/list_print.c \
   list/list_push_back.c \
   list/list_push_front.c \
   list/list_register.c \
