@@ -1,14 +1,38 @@
 # Libft
 
-## ft_ctype
+## Libray compilation
 
-## ft_stdlib
+### Build
+```sh
+make
+```
 
-## ft_string
+### Clean Objects
+```sh
+make clean
+```
 
-## list
+### Clean All
+```sh
+make fclean
+```
 
-### create a new list
+## Compiling with your project
+
+```sh
+clang -I./path/inc -L./path -lft example.c
+```
+## API
+
+### ft_ctype
+
+### ft_stdlib
+
+### ft_string
+
+### list
+
+#### create a new list
 
 #### default
 
