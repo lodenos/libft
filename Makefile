@@ -1,13 +1,13 @@
 NAME = libft.a
 
-CC = cc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror -Weverything -std=gnu18 \
   -Wno-poison-system-directories -Wno-cast-qual
 
-INCLUDES = -I ./inc
+SRC_DIR = ./src
+OBJ_DIR = ./obj
 
-SOURCE_DIR = src
-SOURCE_FILES = \
+SRCS = \
   ft_ctype/ft_isalnum.c \
   ft_ctype/ft_isalpha.c \
   ft_ctype/ft_isascii.c \
@@ -98,20 +98,21 @@ SOURCE_FILES = \
   \
   memory/memory_pretty_print.c
 
-OBJ_DIR = obj
-OBJS = $(patsubst %.c, %.o, $(addprefix $(SOURCE_DIR)/, $(SOURCE_FILES)))
+OBJS = $(patsubst %c,%o,$(SRCS))
 
+INCLUDES = -I ./inc
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(addprefix $(OBJ_DIR)/,$(OBJS))
+	ar rc $(NAME) $(addprefix $(OBJ_DIR)/,$(OBJS))
 
-%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
