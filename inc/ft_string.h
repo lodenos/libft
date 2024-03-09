@@ -61,7 +61,8 @@ typedef struct s_string_build t_string_build;
 typedef struct s_string_build_init t_string_build_init;
 
 struct s_string {
-  t_ptr *data;
+  char *ptr;
+  size_t ptr_size;
   size_t size;
   size_t n_block;
 };
@@ -84,12 +85,10 @@ struct s_string_build_init {
   size_t n_block;
 };
 
-void      string_list_node_delete(t_list_node *);
-
 t_string *string_append(t_string *, t_string *);
 t_string *string_append_str(t_string *, char *, size_t);
 t_string *string_clear(t_string *);
-void      string_delete(t_string **);
+void      string_delete(void *, size_t);
 t_string *string_new(t_string **);
 t_string *string_new_init(t_string **, t_string_init *);
 

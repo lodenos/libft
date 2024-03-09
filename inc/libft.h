@@ -6,5 +6,7 @@
 #include "ft_string.h"
 #include "list.h"
 #include "memory.h"
+#include "quadtree.h"
+#include "type.h"
 
 #endif

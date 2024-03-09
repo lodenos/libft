@@ -15,10 +15,10 @@ t_string *string_new_init(t_string **string, t_string_init *init) {
   block_len = n_block * STRING_BLOCK_SIZE;
   size = init->first_alloc;
   size = size + block_len - size % block_len;
-  (*string)->data = ft_malloc_ptr(size);
-  if (!(*string)->data)
+  (*string)->ptr = malloc(size);
+  if (!(*string)->ptr)
     return free(*string), NULL;
-  *(char *)(*string)->data->ptr = 0;
+  *(char *)(*string)->ptr = 0;
   (*string)->size = 0;
   (*string)->n_block = n_block;
   return *string;

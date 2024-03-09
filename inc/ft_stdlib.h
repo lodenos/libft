@@ -31,14 +31,7 @@ void *ft_calloc(size_t, size_t);
 // Extension
 //******************************************************************************
 
-typedef struct s_ptr t_ptr;
-
-struct s_ptr {
-  size_t size;
-  void *ptr;
-};
-
-t_ptr *ft_malloc_ptr(size_t);
+// t_ptr *ft_malloc_ptr(size_t);
 
 //******************************************************************************
 // IBM

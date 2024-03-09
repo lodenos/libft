@@ -8,6 +8,13 @@ SRC_DIR = ./src
 OBJ_DIR = ./obj
 
 SRCS = \
+  complex/complex_add.c \
+  complex/complex_div.c \
+  complex/complex_modulus.c \
+  complex/complex_modulus_2.c \
+  complex/complex_mul.c \
+  complex/complex_sub.c \
+  \
   ft_ctype/ft_isalnum.c \
   ft_ctype/ft_isalpha.c \
   ft_ctype/ft_isascii.c \
@@ -27,8 +34,6 @@ SRCS = \
   ft_stdlib/ft_atol.c \
   ft_stdlib/ft_atoll.c \
   ft_stdlib/ft_calloc.c \
-  \
-  ft_stdlib/extension/ft_malloc_ptr.c \
   \
   ft_stdlib/extension/IBM/ft_itoa.c \
   ft_stdlib/extension/IBM/ft_lltoa.c \
@@ -66,7 +71,6 @@ SRCS = \
   ft_string/extension/string_build_yield.c \
   ft_string/extension/string_clear.c \
   ft_string/extension/string_delete.c \
-  ft_string/extension/string_list_node_delete.c \
   ft_string/extension/string_new.c \
   ft_string/extension/string_new_init.c \
   \
@@ -89,14 +93,18 @@ SRCS = \
   list/list_print.c \
   list/list_push_back.c \
   list/list_push_front.c \
-  list/list_register.c \
-  list/list_register_clear.c \
-  list/list_register_get_fn.c \
-  list/list_register_get_type.c \
   list/list_reverse.c \
   list/list_size.c \
   \
-  memory/memory_pretty_print.c
+  memory/memory_pretty_print.c \
+  \
+  type/ft_malloc_ptr.c \
+  type/type_register.c \
+  type/type_register_add.c \
+  type/type_register_clear.c \
+  type/type_register_fn.c \
+  type/type_register_get_delete.c \
+  type/type_register_get_duplicate.c
 
 OBJS = $(patsubst %c,%o,$(SRCS))
 

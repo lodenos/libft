@@ -1,8 +1,8 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include "list.h"
 
 t_list *list_print(t_list *context) {
-  t_list_node *node;
+/*  t_list_node *node;
 
   printf("{");
   printf("\"<t_list:%p>\":", (void *)context);
@@ -24,6 +24,6 @@ t_list *list_print(t_list *context) {
 
   printf("\"size\":%zu", context->size);
   printf("}");
-  printf("}");
+  printf("}");*/
   return context;
 }

@@ -2,20 +2,19 @@
 #include "ft_string.h"
 
 t_string *string_append_str(t_string *context, char *str, size_t num) {
-  t_ptr *data;
-  size_t size;
+  char *ptr;
+  size_t size = context->size + num + 1;
   const size_t n_block = context->n_block;
 
-  size = context->size + num + 1;
-  if (size > context->data->size) {
-    data = ft_malloc_ptr(size + n_block - size % n_block);
-    if (!data)
+  if (size > context->ptr_size) {
+    ptr = (char *)malloc(size + n_block - size % n_block);
+    if (!ptr)
       return NULL;
-    ft_memcpy(data->ptr, context->data->ptr, context->size);
-    free(context->data);
-    context->data = data;
+    ft_memcpy(ptr, context->ptr, context->size);
+    free(context->ptr);
+    context->ptr = ptr;
   }
-  ft_memcpy((char *)context->data->ptr + context->data->size, str, num);
+  ft_memcpy(context->ptr + context->size, str, num);
   context->size += num;
   return context;
 }

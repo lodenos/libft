@@ -6,9 +6,13 @@ t_list_node *list_node_new_init(t_list_node **context, t_list_node_init *init) {
   if (!*context)
     return NULL;
   **context = (t_list_node){
-    .ptr = init->ptr,
-    .size = init->size,
-    .type = init->type
+    .ptr = (t_ptr){
+      .ptr = init->ptr,
+      .n_element = init->n_element,
+      .type = init->type
+    },
+    .chain = NULL,
+    .origin = NULL
   };
   return *context;
 }
