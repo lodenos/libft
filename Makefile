@@ -8,6 +8,8 @@ SRC_DIR = ./src
 OBJ_DIR = ./obj
 
 SRCS = \
+  color/color_hsl_to_rgb.c \
+  \
   complex/complex_add.c \
   complex/complex_div.c \
   complex/complex_modulus.c \
